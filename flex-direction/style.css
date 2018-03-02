@@ -33,9 +33,11 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   display:flex;
   border:10px solid goldenrod;
   min-height:100vh;
-  flex-wrap:wrap;
+  /* flex-direction: column;column-reverse; flex-direction row is the default. column make it stack up on top of one another. There's also row-reverse and column-reverse */
+  flex-wrap: wrap; /*the boxes are stacked and distributed. there's also wrap-reverse*/
 }
 
 .box {
-  width:33.3333333%;
+  width: calc(33.333333% - 20px); /* if you give a bigger width here, like 300px for each box, flexbox will still fit everything in the screen. */
+  margin: 10px; /*padding and border are part of the box model but margin is not. Meaning padding and border will be incorporated into the box */
 }
